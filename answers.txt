@@ -1,0 +1,88 @@
+1. fork() Example – Process Creation
+This program shows how a parent process creates a child process using fork().
+When fork() runs, it makes two processes:
+
+The child process (pid == 0) prints its PID and says it is the child.
+
+The parent process (pid > 0) prints its own PID and the child’s PID.
+
+Both processes run at the same time, so the order of output may change.
+
+2. fork() + wait() Example
+This program shows how a parent waits for its child to finish using waitpid().
+The child sleeps for a short time, then exits.
+The parent waits until the child ends, then prints the child’s exit status.
+This is useful when the parent should not continue before the child finishes.
+
+3. Background Process (sleep command)
+Running:
+
+sleep 300 &
+
+
+starts the process in the background.
+The & means the terminal is still free while the command runs.
+To see background jobs:
+
+jobs
+
+
+4. Stopping, Pausing, and Resuming Processes
+To find the PID of a running process:
+
+ps aux | grep sleep
+
+
+To stop (kill) a process:
+
+kill <PID>
+
+
+To pause a process:
+
+kill -STOP <PID>
+
+
+To continue a paused process:
+
+kill -CONT <PID>
+
+
+5. Linker Example
+Two files are used:
+
+file1.c → contains the function hello().
+
+file2.c → calls hello().
+
+Compile and link both files:
+
+gcc file1.c file2.c -o output_program
+
+
+The linker combines both files and connects the function calls.
+If I change a file and compile again, the result changes because the linker rebuilds the program.
+
+6. Loader Example
+A simple program prints a message.
+After compiling it, we can check which shared libraries it uses:
+
+ldd simple_program
+
+
+The loader:
+
+Loads the program into memory
+
+Loads the required shared libraries
+
+Starts running the program from main
+
+7. What the Linker Does
+The linker combines multiple object files (.o) into one executable.
+It resolves function calls and variables between files and adds needed library code.
+Without the linker, code in different files could not work together.
+
+8. What the Loader Does
+The loader is part of the operating system.
+It loads the compiled program into memory, loads the dynamic libraries, sets up the memory layout, and starts the program.

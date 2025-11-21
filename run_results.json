@@ -1,0 +1,56 @@
+{
+  "compile_process_creation": {
+    "cmd": "gcc -Wall -Wextra -g process_creation.c -o process_creation",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "compile_fork_wait": {
+    "cmd": "gcc -Wall -Wextra -g fork_wait.c -o fork_wait",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "compile_output_program": {
+    "cmd": "gcc -Wall -Wextra -g file1.c file2.c -o output_program",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "compile_simple_program": {
+    "cmd": "gcc -Wall -Wextra -g simple_program.c -o simple_program",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "run_process_creation": {
+    "cmd": "./process_creation",
+    "returncode": 0,
+    "stdout": "Parent: This is the parent process. PID: 95, child PID: 97\nChild: This is the child process. PID: 97, PPID: 95\n",
+    "stderr": ""
+  },
+  "run_fork_wait": {
+    "cmd": "./fork_wait",
+    "returncode": 0,
+    "stdout": "Child: sleeping for 1 second...\nChild: exiting.\nParent: waiting for child 100 to finish...\nParent: child finished with status 0.\n",
+    "stderr": ""
+  },
+  "run_output_program": {
+    "cmd": "./output_program",
+    "returncode": 0,
+    "stdout": "Hello from file1!\n",
+    "stderr": ""
+  },
+  "run_simple_program": {
+    "cmd": "./simple_program",
+    "returncode": 0,
+    "stdout": "This is a simple program.\n",
+    "stderr": ""
+  },
+  "ldd_simple_program": {
+    "cmd": "ldd simple_program",
+    "returncode": 0,
+    "stdout": "\tlinux-vdso.so.1 (0x00007eca31e1a000)\n\t/usr/lib/x86_64-linux-gnu/libjemalloc.so.2 (0x00007eca31a00000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007eca3181f000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007eca31d26000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007eca31600000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007eca31d06000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00005608b9b49000)\n",
+    "stderr": ""
+  }
+}
